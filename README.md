@@ -24,7 +24,7 @@ While tests of this nature might offer a reasonable answer (in terms of lost lev
 
 In an environment with a sufficient type system, rules of composition can be captured and enforced by the type system, even up to tracking of side effects with varying degrees of precision. The typically anemic response to this in a less luxurious programming environment falls under a vaguely defined bucket of "integration tests."
 
-As a corollary to the leverage gained by verification that `f . x . f-1 . f = f` at the level of an atomic unit of composition, given a function `g` such that `g . f`, and `g . y . g-1 . g = g`, then `g . f . x . f-1 . y . g-1 = g . f`
+As a corollary to the leverage gained by verification that `f . x . f-1 . f = f` at the level of an atomic unit of composition, given a function `g` such that `g . f`, and `g . y . g-1 . g = g`, then `g . f . x . f-1 . y . g-1 . g . f = g . f`
 
 This means that a pair `(x-1, r)` for some function `x` where `x . r . x-1 . x = x` forms an endofunctor `repr-input` in set, where `repr-input(id) = (id, {({a}, a)})`, and as shown in the previous paragraph `repr-input(g . f) = repr-input(g) . repr-input(f)`
 
