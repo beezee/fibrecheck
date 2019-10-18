@@ -9,7 +9,7 @@ Every function `f` gives rise to an equivalence class via its fibration `f-1`.
 
 This new set has an idempotent split by the codomain of `f`, by taking `x . f-1 . f`, where `x` takes a preferred element (arbitrary works as well, but these are functions after all) for each set in `f-1 . f`
 
-This means that `f . x . f-1` is `1(dom(f))`
+This means that `f . x . f-1` is `1(codom(f))`
 
 Given a function under test, an arbitrary input, and a function from output to input (`x . f-1`), the inverse relationship between these two provided functions can be verified up to equivalence.
 
