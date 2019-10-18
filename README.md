@@ -26,7 +26,7 @@ In an environment with a sufficient type system, rules of composition can be cap
 
 As a corollary to the leverage gained by verification that `f . x . f-1 . f = f` at the level of an atomic unit of composition, given a function `g` such that `g . f`, and `g . y . g-1 = 1(codom(g))`, then `g . f . x . f-1 . y . g-1 . g . f = g . (f . x . f-1) . y . g-1 . g . f = g . 1(codom(f)) . y . g-1 . g . f = g . y . g-1 . g . f = (g . y . g-1) . g . f = 1(codom(g)) . g . f = g . f`
 
-This means that a pair `(x-1, r)` for some function `x` where `x . r . x-1 . x = x` forms an endofunctor `repr-input` in set, where `repr-input(id) = (id, {({a}, a)})`, and as shown in the previous paragraph `repr-input(g . f) = repr-input(g) . repr-input(f)`
+This means that a pair `(x-1, r)` for some function `x` where `x . r . x-1 = 1(codom(x))` forms an endofunctor `repr-input` in set, where `repr-input(id) = (id, {({a}, a)})`, and as shown in the previous paragraph `repr-input(g . f) = repr-input(g) . repr-input(f)`
 
 What this means for "integration tests" is that you gain two new dimensions via verification of composed idempotents. Specifically, in "standard" anemic style testing, a known input `i` is fed to a composite process `f`, and assertions are made against the output, reflecting the specifications for the process under test. You have a single comparison, `(f(i) x expected output)`, alignment is a successful test, and disagreement means the behavior of the composite process is not consistent with the expected behavior.
 
